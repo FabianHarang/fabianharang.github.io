@@ -1,7 +1,7 @@
 # Fabian Nøst Harang - personlig hjemmeside
 
 Dette er en statisk, publiseringsklar hjemmeside i AMOR-stilen. Den trenger
-ingen build tools: `index.html` og `assets/` er nok.
+ingen build tools: `index.html`, `assets/`, `css/` og `ai/` er nok.
 
 ## Se siden lokalt
 
@@ -22,6 +22,7 @@ Gå deretter til `http://localhost:8080`.
 - GitHub-lenke til tensordev: `https://github.com/hagerpa/tensordev`
 - Full publikasjonliste hentet fra arXiv per 17. juni 2026.
 - Egne seksjoner for AI Notes og news.
+- Statisk KI-fondet-artikkel på `ai/blog/ai-fondet.html`.
 - Kontaktfelt med `fabian.harang@bi.no`.
 
 ## Det jeg trenger fra deg senere
@@ -50,7 +51,11 @@ python3 -m http.server 8080
 ```
 
 Åpne `http://localhost:8080`. Sjekk forsiden, menyen, bildet, publikasjoner,
-AI Notes, news og kontakt.
+AI Notes, KI-fondet-artikkelen, news og kontakt.
+
+Viktig: KI-fondet-artikkelen lastes som statisk innhold via nettleseren. Test
+den derfor via lokal server eller GitHub Pages, ikke ved å dobbeltklikke direkte
+på `ai/blog/ai-fondet.html`.
 
 Stopp lokal server etterpå med `Ctrl+C` i terminalen.
 
@@ -101,21 +106,34 @@ I repositoryet:
 index.html
 README.md
 assets/
+css/
+ai/
 ```
 
-Viktig: `assets/` må være en mappe på toppnivå, ikke inni en ekstra mappe.
+Viktig: `assets/`, `css/` og `ai/` må være mapper på toppnivå, ikke inni en
+ekstra mappe.
 Riktig struktur på GitHub skal være:
 
 ```text
 fabianharang.github.io/
 ├── index.html
 ├── README.md
-└── assets/
-    ├── Fabian-Harang.jpg
-    ├── amor-icon-dark.png
-    ├── amor-logo-white.png
-    └── ...
+├── assets/
+│   ├── Fabian-Harang.jpg
+│   ├── amor-icon-dark.png
+│   ├── amor-logo-white.png
+│   └── ...
+├── css/
+│   └── post.css
+└── ai/
+    └── blog/
+        ├── ai-fondet.html
+        └── ai-fondet.content.html
 ```
+
+Ikke last opp `KI-fondet-nettside/` som del av den offentlige nettsiden. Den er
+en arbeids-/kildemappe med originalinstruksene. GitHub Pages trenger bare den
+ferdige `ai/`-mappen og `css/`-mappen som ligger på toppnivå.
 
 4. Skriv commit-melding, for eksempel `Initial website`.
 5. Klikk `Commit changes`.
@@ -274,6 +292,7 @@ Test disse adressene:
 https://www.fabianharang.com
 https://fabianharang.com
 https://DITT-GITHUB-BRUKERNAVN.github.io
+https://www.fabianharang.com/ai/blog/ai-fondet.html
 ```
 
 Hvis `www` virker, men domenet uten `www` ikke virker, er det nesten alltid
@@ -302,6 +321,7 @@ For større endringer kan vi senere sette opp GitHub Desktop eller `git` lokalt,
 slik at du bare kan pushe endringer fra Mac-en.
 
 - Nye AI-notater eller dokumenter legges i `assets/` og lenkes fra AI Notes-seksjonen.
+- Nye lengre AI-notater kan legges som egne HTML-sider i `ai/blog/`.
 - Nye nyheter legges inn i `#news` som nye `news-item`-artikler.
 
 ## Vedlikehold
