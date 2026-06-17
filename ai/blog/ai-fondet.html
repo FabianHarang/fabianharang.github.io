@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>KI-fondet | Fabian Nøst Harang</title>
+  <meta name="description" content="KI-fondet: En forsikring for europeisk suveren intelligens, av Andreas Ravndal Kostøl og Fabian Nøst Harang."/>
+  <meta property="og:title" content="KI-fondet"/>
+  <meta property="og:description" content="En forsikring for europeisk suveren intelligens."/>
+  <meta property="og:type" content="article"/>
+  <link rel="icon" href="../../assets/amor-icon-dark.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"/>
+  <link rel="stylesheet" href="../../css/post.css"/>
+  <style>
+    :root {
+      --petrol: #0E4C54;
+      --petrol-deep: #0A373D;
+      --petrol-night: #072A2F;
+      --teal: #1C8A8F;
+      --teal-soft: #88B0B5;
+      --amber: #E0A458;
+      --ink: #16242A;
+      --ink-soft: #3C4F55;
+      --muted: #5E7378;
+      --paper: #F6F4EE;
+      --line: #D4DBDA;
+      --accent: var(--petrol);
+      --accent-soft: rgba(28, 138, 143, 0.12);
+      --light: var(--teal-soft);
+      --radius: 8px;
+      --display: "Space Grotesk", system-ui, sans-serif;
+      --body: "IBM Plex Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--petrol);
+      text-decoration-color: rgba(28, 138, 143, 0.35);
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--teal);
+      text-decoration-color: currentColor;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1040px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      background: var(--amber);
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+
+    .skip:focus {
+      top: 16px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 244, 238, 0.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-family: var(--display);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--teal);
+    }
+
+    .post-hero {
+      background:
+        linear-gradient(90deg, rgba(7, 42, 47, 0.98), rgba(7, 42, 47, 0.82) 54%, rgba(7, 42, 47, 0.62)),
+        url("../../assets/network-cover.png") right -120px center / min(760px, 76vw) no-repeat;
+      color: var(--paper);
+      padding: clamp(48px, 8vw, 84px) 0 clamp(36px, 6vw, 64px);
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      color: var(--amber);
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .post-hero h1 {
+      max-width: 15ch;
+      margin: 0 0 18px;
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: clamp(2.5rem, 7vw, 4.4rem);
+      letter-spacing: 0;
+      line-height: 1.03;
+    }
+
+    .hero-lede {
+      max-width: 62ch;
+      margin: 0;
+      color: #c7dcdd;
+      font-size: 1.08rem;
+    }
+
+    .article-shell {
+      padding: clamp(34px, 6vw, 72px) 0;
+    }
+
+    .article-body {
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 1.01rem;
+    }
+
+    .article-loading,
+    .article-error {
+      border-left: 3px solid var(--amber);
+      margin: 0;
+      padding: 1rem 1.2rem;
+      background: rgba(224, 164, 88, 0.16);
+      border-radius: var(--radius);
+    }
+
+    .article-tools {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      max-width: 46rem;
+      margin: 0 auto 26px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .article-tools a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .footer {
+      background: var(--petrol-night);
+      color: var(--paper);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: #c7dcdd;
+      font-size: 0.9rem;
+    }
+
+    .footer a {
+      color: var(--paper);
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 1040px);
+      }
+
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        min-height: auto;
+        padding: 16px 0;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 10px 14px;
+      }
+
+      .post-hero {
+        background:
+          linear-gradient(90deg, rgba(7, 42, 47, 0.97), rgba(7, 42, 47, 0.86)),
+          url("../../assets/network-cover.png") center / cover no-repeat;
+      }
+
+      .article-tools,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#article-content">Skip to article</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="../../index.html" aria-label="Fabian Nøst Harang home">
+        <img src="../../assets/amor-icon-dark.png" alt=""/>
+        <span>Fabian Nøst Harang</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../../index.html#research">Research</a>
+        <a href="../../index.html#ai-notes" class="active">Thoughts on AI</a>
+        <a href="../../index.html#news">News</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="post-hero" aria-label="Article introduction">
+      <div class="container">
+        <p class="kicker">Thoughts on AI</p>
+        <h1>KI-fondet</h1>
+        <p class="hero-lede">
+          En statisk publisert artikkel om hvordan en norsk-europeisk KI-satsing kan bygges som strategisk infrastruktur.
+        </p>
+      </div>
+    </section>
+
+    <section class="article-shell">
+      <div class="container">
+        <div class="article-tools">
+          <a href="../../index.html#ai-notes">Back to Thoughts on AI</a>
+          <span>Andreas Ravndal Kostøl og Fabian Nøst Harang</span>
+        </div>
+        <article class="article-body" id="article-content" aria-live="polite">
+          <p class="article-loading">Loading article...</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>&copy; Fabian Nøst Harang</span>
+      <a href="../../index.html">Home</a>
+    </div>
+  </footer>
+
+  <script>
+    const article = document.querySelector("#article-content");
+
+    fetch("ai-fondet.content.html")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Article content could not be loaded.");
+        }
+        return response.text();
+      })
+      .then((html) => {
+        article.innerHTML = html;
+        const back = document.createElement("p");
+        back.innerHTML = '<a class="back-link" href="../../index.html#ai-notes">Back to Thoughts on AI</a>';
+        article.appendChild(back);
+      })
+      .catch(() => {
+        article.innerHTML = '<p class="article-error">Artikkelen kunne ikke lastes. Åpne siden via GitHub Pages eller en lokal server, for eksempel <code>python3 -m http.server 8080</code>, og gå til <code>http://localhost:8080/ai/blog/ai-fondet.html</code>.</p>';
+      });
+  </script>
+</body>
+</html>
