@@ -1,0 +1,43 @@
+/* post.css — article styling for andreaskostol.no/ai/blog posts.
+   Loaded by post.php in addition to the site's /css/style.css.
+   Uses the site's CSS variables (--ink, --accent, --line, --muted, --accent-soft, --radius). */
+
+.article-body { max-width: 46rem; }
+.article-body section { margin-top: 0.5rem; }
+
+/* Post header (title block lives inside the article column) */
+.post-title { font-size: 1.9rem; margin: 0.5rem 0 0.3rem; color: var(--ink); letter-spacing: 0; }
+.post-subtitle { font-size: 1.15rem; color: var(--muted); margin: 0 0 0.6rem; }
+.post-meta { color: var(--muted); font-size: 0.92rem; margin: 0.2rem 0; }
+.post-categories { margin: 0.6rem 0 1.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.post-categories span { font-size: 0.75rem; background: var(--accent-soft); color: var(--accent);
+  padding: 0.2rem 0.6rem; border-radius: 999px; }
+
+/* Body */
+.article-body h1 { font-size: 1.55rem; margin: 2.6rem 0 0.6rem; color: var(--ink);
+  border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; }
+.article-body h2 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; color: var(--accent); }
+.article-body p { line-height: 1.72; margin: 0 0 1rem; }
+.article-body ul, .article-body ol { line-height: 1.72; margin: 0 0 1rem 1.2rem; }
+.article-body li { margin-bottom: 0.35rem; }
+.header-section-number { color: var(--light); font-weight: 600; margin-right: 0.35em; }
+
+blockquote.blockquote { border-left: 3px solid var(--accent); background: var(--accent-soft);
+  padding: 1rem 1.2rem; margin: 1.5rem 0; border-radius: var(--radius); }
+blockquote.blockquote p { margin: 0; }
+
+figure.figure { margin: 2rem 0; text-align: center; }
+.figure-img { max-width: 100%; height: auto; margin: 0 auto; border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.55rem; text-align: left; line-height: 1.5; }
+
+.article-body table { width: 100%; border-collapse: collapse; margin: 1rem 0 0.4rem; font-size: 0.92rem; }
+.article-body th, .article-body td { padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--line); text-align: right; }
+.article-body th:first-child, .article-body td:first-child { text-align: left; }
+.article-body thead th { border-bottom: 2px solid var(--line); color: var(--accent); }
+
+.back-link { display: inline-block; margin-top: 2.5rem; font-size: 0.9rem; }
+.footnotes { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line);
+  margin-top: 2.5rem; padding-top: 0.5rem; }
+.footnotes ol { margin-left: 1.1rem; }
+.footnotes li { margin-bottom: 0.4rem; }
+.footnotes p { margin: 0; line-height: 1.5; }
