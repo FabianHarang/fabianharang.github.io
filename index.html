@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Fabian Nøst Harang | Data Science, Stochastic Analysis and AI Notes</title>
+  <meta name="description" content="Fabian Nøst Harang is Professor of Data Science at BI Norwegian Business School. Research in signature methods, stochastic analysis, applied stochastic modelling and trustworthy AI."/>
+  <meta property="og:title" content="Fabian Nøst Harang"/>
+  <meta property="og:description" content="Research in signature methods, stochastic analysis, applied stochastic modelling and trustworthy AI."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="assets/Fabian-Harang.jpg"/>
+  <link rel="icon" href="assets/amor-icon-dark.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap"/>
+  <style>
+    :root {
+      --petrol: #0E4C54;
+      --petrol-deep: #0A373D;
+      --petrol-night: #072A2F;
+      --teal: #1C8A8F;
+      --teal-soft: #88B0B5;
+      --amber: #E0A458;
+      --amber-deep: #C6863A;
+      --clay: #BE6E52;
+      --ink: #16242A;
+      --ink-soft: #3C4F55;
+      --slate: #5E7378;
+      --paper: #F6F4EE;
+      --paper-pure: #FBFAF6;
+      --mist: #E7EBEA;
+      --line: #D4DBDA;
+      --display: "Space Grotesk", system-ui, sans-serif;
+      --body: "IBM Plex Sans", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --serif: "Newsreader", Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.62;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--petrol);
+      text-decoration-color: rgba(28, 138, 143, 0.35);
+      text-underline-offset: 0.18em;
+    }
+
+    a:hover {
+      color: var(--teal);
+      text-decoration-color: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+      font-family: var(--display);
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .skip {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      background: var(--amber);
+      color: var(--ink);
+      padding: 10px 12px;
+      border-radius: 6px;
+    }
+
+    .skip:focus {
+      top: 16px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(246, 244, 238, 0.9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 68px;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .nav nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav nav a {
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .nav nav a:hover {
+      color: var(--teal);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--petrol-deep);
+      color: var(--paper);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(7, 42, 47, 0.98), rgba(7, 42, 47, 0.8) 48%, rgba(7, 42, 47, 0.42)),
+        url("assets/network-cover.png") right -70px center / min(860px, 78vw) no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      z-index: -1;
+      height: 40%;
+      background: linear-gradient(0deg, rgba(7, 42, 47, 0.72), transparent);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.68fr);
+      gap: 56px;
+      align-items: center;
+      padding: 30px 0 28px;
+    }
+
+    .eyebrow,
+    .kicker,
+    .micro,
+    .pub-year {
+      font-family: var(--mono);
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      margin-bottom: 18px;
+      color: var(--amber);
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      max-width: 11ch;
+      margin-bottom: 24px;
+      color: var(--paper);
+      font-size: clamp(3.1rem, 7vw, 4.75rem);
+    }
+
+    .hero .role {
+      max-width: 62ch;
+      margin-bottom: 30px;
+      color: #c7dcdd;
+      font-size: 1.15rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 18px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: var(--amber);
+      color: #31220f;
+    }
+
+    .btn.primary:hover {
+      background: #edb66e;
+      color: #31220f;
+    }
+
+    .btn.secondary {
+      border-color: rgba(246, 244, 238, 0.32);
+      color: var(--paper);
+    }
+
+    .btn.secondary:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .hero-links a {
+      color: #d9e7e7;
+      font-weight: 700;
+    }
+
+    .identity {
+      justify-self: stretch;
+      border: 1px solid rgba(246, 244, 238, 0.18);
+      border-radius: 8px;
+      background: rgba(7, 42, 47, 0.72);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+    }
+
+    .identity-visual {
+      min-height: 280px;
+      background: var(--petrol-night);
+    }
+
+    .portrait-photo {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      object-position: center 34%;
+    }
+
+    .identity-body {
+      padding: 24px;
+      color: #d9e7e7;
+    }
+
+    .identity-body h2 {
+      margin-bottom: 8px;
+      color: var(--paper);
+      font-size: 1.25rem;
+    }
+
+    .identity-body p {
+      margin-bottom: 14px;
+      color: #b7d0d2;
+      font-size: 0.98rem;
+    }
+
+    .identity-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .identity-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 6px 10px;
+      border: 1px solid rgba(246, 244, 238, 0.16);
+      border-radius: 8px;
+      color: #d9e7e7;
+      font-size: 0.86rem;
+      font-weight: 700;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid rgba(246, 244, 238, 0.16);
+    }
+
+    .stat {
+      padding: 13px 14px;
+      border-right: 1px solid rgba(246, 244, 238, 0.16);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--paper);
+      font-family: var(--display);
+      font-size: 0.98rem;
+      line-height: 1.2;
+    }
+
+    .stat-label {
+      color: #93b6b8;
+      display: block;
+      margin-top: 4px;
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .affiliations {
+      background: var(--petrol-night);
+      border-top: 1px solid rgba(246, 244, 238, 0.08);
+      color: #9ebfc2;
+    }
+
+    .affiliations .wrap {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      min-height: 86px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .affiliations span {
+      color: #7ca3a6;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+    }
+
+    .affiliations a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+    }
+
+    .affiliations img {
+      max-height: 28px;
+      width: auto;
+      opacity: 0.96;
+    }
+
+    .affiliations .sure {
+      max-height: 22px;
+    }
+
+    .section {
+      padding: 82px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section.dark {
+      border-bottom: 0;
+      background: var(--petrol-deep);
+      color: var(--paper);
+    }
+
+    .section.dark h2,
+    .section.dark h3 {
+      color: var(--paper);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.38fr) minmax(0, 1fr);
+      gap: 52px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      margin-bottom: 12px;
+      color: var(--teal);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+
+    .dark .kicker {
+      color: var(--amber);
+    }
+
+    .section h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3.15rem);
+    }
+
+    .lead {
+      max-width: 68ch;
+      color: var(--ink-soft);
+      font-size: 1.12rem;
+    }
+
+    .dark .lead {
+      color: #bdd4d6;
+    }
+
+    .prose {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.52fr);
+      gap: 44px;
+      align-items: start;
+    }
+
+    .prose p {
+      max-width: 72ch;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .note {
+      border-left: 4px solid var(--amber);
+      padding: 4px 0 4px 20px;
+      color: var(--ink-soft);
+      font-family: var(--serif);
+      font-size: 1.28rem;
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .theme {
+      min-height: 236px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-pure);
+    }
+
+    .theme .num {
+      margin-bottom: 28px;
+      color: var(--amber-deep);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    .theme h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .theme p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+    }
+
+    .resource-note {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      margin-top: 24px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--mist);
+    }
+
+    .resource-note h3 {
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .resource-note p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 0.98rem;
+    }
+
+    .resource-note a {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .link-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .link-panel {
+      min-height: 230px;
+      padding: 24px;
+      border: 1px solid rgba(246, 244, 238, 0.16);
+      border-radius: 8px;
+      background: rgba(7, 42, 47, 0.42);
+      color: #bfd7d9;
+    }
+
+    .link-panel h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .link-panel p {
+      margin-bottom: 18px;
+      color: #bfd7d9;
+    }
+
+    .link-panel a {
+      color: var(--amber);
+      font-weight: 700;
+    }
+
+    .news-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .news-item {
+      min-height: 220px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-pure);
+    }
+
+    .news-item time {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--amber-deep);
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
+
+    .news-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.18rem;
+    }
+
+    .news-item p {
+      margin-bottom: 18px;
+      color: var(--ink-soft);
+      font-size: 0.96rem;
+    }
+
+    .pub-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 32px;
+    }
+
+    .pub-tools a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper-pure);
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .pub-tools a:hover {
+      border-color: var(--teal);
+      color: var(--petrol);
+    }
+
+    .publication-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .pub {
+      display: grid;
+      grid-template-columns: 70px minmax(0, 1fr);
+      gap: 22px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pub-year {
+      color: var(--slate);
+      font-size: 0.82rem;
+      padding-top: 2px;
+    }
+
+    .pub-title {
+      margin-bottom: 5px;
+      font-family: var(--display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.32;
+    }
+
+    .pub-title a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .pub-title a:hover {
+      color: var(--teal);
+    }
+
+    .authors,
+    .venue {
+      margin-bottom: 4px;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      line-height: 1.45;
+    }
+
+    .venue {
+      color: var(--slate);
+      font-style: italic;
+    }
+
+    .plain-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .plain-list li {
+      position: relative;
+      padding: 10px 0 10px 22px;
+      color: var(--ink-soft);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .plain-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.28em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--amber);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .contact-item {
+      min-height: 132px;
+      padding: 22px;
+      border: 1px solid rgba(246, 244, 238, 0.16);
+      border-radius: 8px;
+      background: rgba(7, 42, 47, 0.48);
+    }
+
+    .contact-item .micro {
+      margin-bottom: 8px;
+      color: #92b3b6;
+      font-size: 0.72rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: var(--paper);
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      background: var(--petrol-night);
+      color: #8ab0b3;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 72px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    footer img {
+      height: 22px;
+      width: auto;
+      opacity: 0.86;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .prose,
+      .section-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        padding-top: 72px;
+      }
+
+      .identity {
+        max-width: 560px;
+      }
+
+      .themes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .link-grid,
+      .link-grid.two,
+      .news-list,
+      .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .resource-note {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 14px 0;
+      }
+
+      .nav nav {
+        width: 100%;
+        gap: 14px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .nav nav a {
+        white-space: nowrap;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(180deg, rgba(7, 42, 47, 0.97), rgba(7, 42, 47, 0.84)),
+          url("assets/network-cover.png") center top / 820px no-repeat;
+      }
+
+      .hero-grid {
+        gap: 34px;
+        padding: 42px 0 44px;
+      }
+
+      .hero h1 {
+        font-size: 3.15rem;
+      }
+
+      .identity {
+        display: none;
+      }
+
+      .section {
+        padding: 60px 0;
+      }
+
+      .themes,
+      .link-grid,
+      .link-grid.two,
+      .news-list,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .resource-note a {
+        white-space: normal;
+      }
+
+      .pub {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .pub-year {
+        padding-top: 0;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .stat {
+        border-right: 0;
+        border-bottom: 1px solid rgba(246, 244, 238, 0.16);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" aria-label="Primary navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="Fabian Nøst Harang home">
+        <img src="assets/amor-icon-dark.png" alt=""/>
+        <span>Fabian Nøst Harang</span>
+      </a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#ai-notes">AI Notes</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#leadership">Centres</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">BI Norwegian Business School</p>
+        <h1>Fabian Nøst Harang</h1>
+        <p class="role">
+          Professor of Data Science working across signature methods,
+          stochastic analysis, applied stochastic modelling and trustworthy AI.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#research">Current research</a>
+          <a class="btn secondary" href="#ai-notes">AI Notes</a>
+        </div>
+        <div class="hero-links" aria-label="Academic profile links">
+          <a href="https://scholar.google.com/citations?user=BgOf4TgAAAAJ&hl=no" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://arxiv.org/search/?query=%22Fabian+Harang%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener">arXiv record</a>
+          <a href="https://www.simula.no/sure-ai" target="_blank" rel="noopener">SURE-AI</a>
+          <a href="#leadership">AMOR</a>
+        </div>
+      </div>
+
+      <aside class="identity" aria-label="Research profile summary">
+        <div class="identity-visual">
+          <img class="portrait-photo" src="assets/Fabian-Harang.jpg" alt="Fabian Nøst Harang"/>
+        </div>
+        <div class="identity-body">
+          <h2>Data science with mathematical depth</h2>
+          <p>
+            Bridging rigorous stochastic analysis, data-driven methodology,
+            industrial modelling and responsible AI advice.
+          </p>
+          <div class="identity-tags" aria-label="Research focus summary">
+            <span>Methods</span>
+            <span>AI Notes</span>
+            <span>AMOR / SURE-AI</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <div class="affiliations" aria-label="Affiliations">
+    <div class="wrap">
+      <span>Affiliations</span>
+      <a href="https://www.bi.edu/" target="_blank" rel="noopener" aria-label="BI Norwegian Business School">
+        <img src="assets/bi.png" alt="BI Norwegian Business School"/>
+      </a>
+      <a href="https://www.simula.no/sure-ai" target="_blank" rel="noopener" aria-label="SURE-AI">
+        <img class="sure" src="assets/sureai-white.png" alt="SURE-AI"/>
+      </a>
+      <a href="#leadership" aria-label="AMOR">
+        <img src="assets/amor-logo-white.png" alt="AMOR"/>
+      </a>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">About</p>
+            <h2>Research with memory, uncertainty and structure.</h2>
+          </div>
+          <p class="lead">
+            I develop data science methods for systems that are irregular,
+            history-dependent or high-dimensional, with applications in
+            industry, public-facing advice and decision-making under uncertainty.
+          </p>
+        </div>
+
+        <div class="prose">
+          <div>
+            <p>
+              My research sits at the intersection of signature methods in
+              data science, stochastic analysis, applied stochastic modelling
+              and trustworthy AI. A common thread is the search for precise
+              mathematical representations of complex dynamics, especially when
+              memory, uncertainty and irregularity are central rather than
+              peripheral.
+            </p>
+            <p>
+              At BI Norwegian Business School, this work connects naturally
+              with data science, operations research and trustworthy AI: designing
+              methods and advice that are not only powerful, but interpretable,
+              reliable and useful for real decision environments.
+            </p>
+          </div>
+          <p class="note">
+            The ambition is simple: make complex systems more understandable,
+            more useful and more responsible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Research</p>
+            <h2>Current research interests</h2>
+          </div>
+          <p class="lead">
+            Four themes currently shape my research, ranging from mathematical
+            foundations to industry-facing modelling and AI decision support.
+          </p>
+        </div>
+
+        <div class="themes">
+          <article class="theme">
+            <div class="num">01</div>
+            <h3>Signature methods in Data Science</h3>
+            <p>
+              Feature representations for paths, images and time series,
+              with an emphasis on memory, structure and interpretable learning.
+            </p>
+          </article>
+          <article class="theme">
+            <div class="num">02</div>
+            <h3>Stochastic Analysis</h3>
+            <p>
+              Pathwise methods, stochastic differential equations,
+              regularization by noise and Volterra-type systems.
+            </p>
+          </article>
+          <article class="theme">
+            <div class="num">03</div>
+            <h3>Applied Stochastic modelling with applications in Industry</h3>
+            <p>
+              Stochastic models for industry-facing problems where uncertainty,
+              dynamics and operational decisions need to be handled together.
+            </p>
+          </article>
+          <article class="theme">
+            <div class="num">04</div>
+            <h3>Trustworthy AI and Decisions</h3>
+            <p>
+              Reliable data-driven tools and thoughtful AI advice for decisions
+              under uncertainty, developed with AMOR, SURE-AI and collaborators.
+            </p>
+          </article>
+        </div>
+
+        <div class="resource-note">
+          <div>
+            <h3>Software for Volterra signatures</h3>
+            <p>
+              The tensordev repository by Paul Hager, Luca Pelizzari and
+              collaborators provides efficient computation of Volterra
+              signatures and related objects from recent preprints.
+            </p>
+          </div>
+          <a href="https://github.com/hagerpa/tensordev" target="_blank" rel="noopener">View tensordev on GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="ai-notes">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">AI Notes</p>
+            <h2>Thoughts on AI</h2>
+          </div>
+          <p class="lead">
+            A dedicated place for notes, talks and public-facing reflections on
+            trustworthy AI, mathematical risk and responsible data-driven
+            decisions.
+          </p>
+        </div>
+
+        <div class="link-grid two">
+          <article class="link-panel">
+            <h3>On creating a strategic Norwegian-European AI fund</h3>
+            <p>
+              Together with <a href="https://www.andreaskostol.no/" target="_blank" rel="noopener">Andreas Ravndal Kostøl</a>, I have written some thoughts on developing a strategic Norwegian-European AI investment fund constructed from the Norwegian Pension Fund and built around the same model, with the objective of strengthening European AI infrastructure and industry.
+            </p>
+            <a href="#" aria-label="Read more link coming soon">Read more on practical implementation</a>
+          </article>
+          <article class="link-panel">
+            <h3>Sustainable, risk-averse and ethical AI</h3>
+            <p>
+              Research and collaboration on AI systems that are sustainable,
+              risk-aware and ethically grounded, connected to the SURE-AI centre.
+            </p>
+            <a href="https://www.simula.no/sure-ai" target="_blank" rel="noopener">Visit SURE-AI</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">News</p>
+            <h2>Updates from AMOR and SURE-AI</h2>
+          </div>
+          <p class="lead">
+            A simple news area for selected AMOR and SURE-AI updates, AI notes,
+            notes, talks, reports and other items worth highlighting.
+          </p>
+        </div>
+
+        <div class="news-list">
+          <article class="news-item">
+            <time datetime="2026">AMOR</time>
+            <h3>AMOR updates</h3>
+            <p>
+              Selected centre news, activities and research highlights can be
+              posted here.
+            </p>
+            <a href="#leadership">AMOR centre</a>
+          </article>
+          <article class="news-item">
+            <time datetime="2026">SURE-AI</time>
+            <h3>SURE-AI updates</h3>
+            <p>
+              Relevant news from SURE-AI, especially around trustworthy AI and
+              responsible data-driven decisions.
+            </p>
+            <a href="https://www.simula.no/sure-ai" target="_blank" rel="noopener">Visit SURE-AI</a>
+          </article>
+          <article class="news-item">
+            <time datetime="2026">AI Notes</time>
+            <h3>Thoughts on AI</h3>
+            <p>
+              Public reports, advisory documents and short reflections on AI can
+              be collected in the AI Notes section.
+            </p>
+            <a href="#ai-notes">AI Notes</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Publications</p>
+            <h2>Recent and selected work</h2>
+          </div>
+          <p class="lead">
+            A complete, compact publication list is included below, with direct
+            links to arXiv records where available. Google Scholar remains the
+            best place for citation counts and profile-level updates.
+          </p>
+        </div>
+
+        <div class="pub-tools" aria-label="Publication profile links">
+          <a href="https://scholar.google.com/citations?user=BgOf4TgAAAAJ&hl=no" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://arxiv.org/search/?query=%22Fabian+Harang%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener">arXiv author search</a>
+          <a href="mailto:fabian.harang@bi.no">Request CV</a>
+        </div>
+
+        <div class="publication-list">
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2605.18406v1" target="_blank" rel="noopener">Computational aspects of the Volterra Signature</a></p>
+              <p class="authors">Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel</p>
+              <p class="venue">Software: <a href="https://github.com/hagerpa/tensordev" target="_blank" rel="noopener">hagerpa/tensordev</a></p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2026</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2603.04525v2" target="_blank" rel="noopener">The Volterra signature</a></p>
+              <p class="authors">Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2025</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2509.05170v1" target="_blank" rel="noopener">Stochastic Analysis of Overlapping Generations Models Under Incomplete Markets</a></p>
+              <p class="authors">Cangxiong Chen, Sigmund Ellingsrud, Fabian Harang, Alfonso Irarrazabal, Avi Mayorcas</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2025</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2509.03665v1" target="_blank" rel="noopener">Weak Existence for Degenerate Distribution Dependent SDEs with multiplicative Noise -- a pathwise regularization approach</a></p>
+              <p class="authors">Fabian Harang, Chengcheng Ling, Peter H. C. Pang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2024</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2412.16009v2" target="_blank" rel="noopener">Universal approximation on non-geometric rough paths and applications to financial derivatives pricing</a></p>
+              <p class="authors">Fabian A. Harang, Fred Espen Benth, Fride Straum</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2024</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2403.00130v1" target="_blank" rel="noopener">On the signature of an image</a></p>
+              <p class="authors">Joscha Diehl, Kurusch Ebrahimi-Fard, Fabian Harang, Samy Tindel</p>
+              <p class="venue">Stochastic Processes and their Applications, 187, 104661, 2025. DOI: 10.1016/j.spa.2025.104661</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2023</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2311.00764v1" target="_blank" rel="noopener">Pathwise regularization by noise for semilinear SPDEs driven by a multiplicative cylindrical Brownian motion</a></p>
+              <p class="authors">Florian Bechtold, Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2023</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2307.11527v1" target="_blank" rel="noopener">A multiparameter Stochastic Sewing lemma and the regularity of local times associated to Gaussian sheets</a></p>
+              <p class="authors">Florian Bechtold, Fabian A. Harang, Hannes Kern</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2022</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2212.10053v1" target="_blank" rel="noopener">Dynamic spending and portfolio decisions with a soft social norm</a></p>
+              <p class="authors">Knut Anton Mork, Fabian Andsem Harang, Haakon Andreas Trønnes, Vegard Skonseng Bjerketvedt</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2022</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2206.05360v2" target="_blank" rel="noopener">Non-linear Young equations in the plane and pathwise regularization by noise for the stochastic wave equation</a></p>
+              <p class="authors">Florian Bechtold, Fabian A. Harang, Nimit Rana</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2022</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2202.05076v1" target="_blank" rel="noopener">Volterra equations driven by rough signals 3: Probabilistic construction of the Volterra rough path for fractional Brownian motions</a></p>
+              <p class="authors">Fabian Harang, Samy Tindel, Xiaohua Wang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2021</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2105.14063v1" target="_blank" rel="noopener">Distribution dependent SDEs driven by additive fractional Brownian motion</a></p>
+              <p class="authors">Lucio Galeati, Fabian A. Harang, Avi Mayorcas</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2021</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2105.14056v1" target="_blank" rel="noopener">Distribution dependent SDEs driven by additive continuous noise</a></p>
+              <p class="authors">Lucio Galeati, Fabian A. Harang, Avi Mayorcas</p>
+              <p class="venue">Electronic Journal of Probability, 27, 1-38, 2022. DOI: 10.1214/22-EJP756</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2021</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2102.10119v1" target="_blank" rel="noopener">Volterra equations driven by rough signals 2: higher order expansions</a></p>
+              <p class="authors">Fabian A. Harang, Samy Tindel, Xiaohua Wang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2021</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2101.00915v1" target="_blank" rel="noopener">Pathwise regularization of the stochastic heat equation with multiplicative noise through irregular perturbation</a></p>
+              <p class="authors">Rémi Catellier, Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2010.15517v2" target="_blank" rel="noopener">Pathwise Regularisation of Singular Interacting Particle Systems and their Mean Field Limits</a></p>
+              <p class="authors">Fabian Harang, Avi Mayorcas</p>
+              <p class="venue">DOI: 10.1016/j.spa.2023.02.005</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2008.03204v2" target="_blank" rel="noopener">Log-modulated rough stochastic volatility models</a></p>
+              <p class="authors">Christian Bayer, Fabian Andsem Harang, Paolo Pigato</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2008.02335v1" target="_blank" rel="noopener">Regularization of multiplicative SDEs through additive noise</a></p>
+              <p class="authors">Lucio Galeati, Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2007.01093v3" target="_blank" rel="noopener">Regularity of Local times associated to Volterra-Lévy processes and path-wise regularization of stochastic differential equations</a></p>
+              <p class="authors">Fabian A. Harang, Chengcheng Ling</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2005.14460v1" target="_blank" rel="noopener">Infinite Dimensional Pathwise Volterra Processes Driven by Gaussian Noise -- Probabilistic Properties and Applications</a></p>
+              <p class="authors">Fred E. Benth, Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2020</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2003.05816v2" target="_blank" rel="noopener">C-infinity regularization of ODEs perturbed by noise</a></p>
+              <p class="authors">Fabian A. Harang, Nicolas Perkowski</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2019</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1912.02064v2" target="_blank" rel="noopener">Volterra Equations Driven by Rough Signals</a></p>
+              <p class="authors">Fabian A. Harang, Samy Tindel</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2019</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1908.05523v1" target="_blank" rel="noopener">Self-Exciting Multifractional Processes</a></p>
+              <p class="authors">Fabian A. Harang, Marc Lagunas-Merino, Salvador Ortiz-Latorre</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2018</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1806.09915v4" target="_blank" rel="noopener">An extension of the sewing lemma to hyper-cubes and hyperbolic equations driven by multi parameter Young fields</a></p>
+              <p class="authors">Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2018</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1805.11435v1" target="_blank" rel="noopener">A Bismut-Elworthy-Li Formula for Singular SDE's Driven by a Fractional Brownian Motion and Applications to Rough Volatility Modeling</a></p>
+              <p class="authors">Oussama Amine, Emmanuel Coffie, Fabian Harang, Frank Proske</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2018</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1803.04369v2" target="_blank" rel="noopener">Differential Equations Driven by Variable Order Hölder Noise, and the Regularizing Effect of Delay</a></p>
+              <p class="authors">Fabian A. Harang</p>
+            </div>
+          </article>
+          <article class="pub">
+            <div class="pub-year">2017</div>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/1706.07387v2" target="_blank" rel="noopener">Girsanov Theorem for Multifractional Brownian Processes</a></p>
+              <p class="authors">Fabian Harang, Torstein Nilssen, Frank Proske</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="leadership">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Centres</p>
+            <h2>AMOR and SURE-AI</h2>
+          </div>
+          <p class="lead">
+            Research leadership and collaboration live across centres that
+            connect mathematics, operations research and trustworthy artificial
+            intelligence.
+          </p>
+        </div>
+
+        <div class="link-grid two">
+          <article class="link-panel" id="amor">
+            <h3>AMOR</h3>
+            <p>
+              Center for Applied Mathematics and Operations Research.
+            </p>
+            <a href="#contact">Contact about AMOR</a>
+          </article>
+          <article class="link-panel">
+            <h3>SURE-AI</h3>
+            <p>
+              The Norwegian Centre for Sustainable, Risk-averse and Ethical AI.
+            </p>
+            <a href="https://www.simula.no/sure-ai" target="_blank" rel="noopener">Visit SURE-AI</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="contact">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Contact</p>
+            <h2>Get in touch</h2>
+          </div>
+          <p class="lead">
+            The easiest way to reach me is by email. For research and
+            collaboration requests, please include a short description of the
+            topic and relevant timelines.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="micro">Email</div>
+            <a href="mailto:fabian.harang@bi.no">fabian.harang@bi.no</a>
+          </div>
+          <div class="contact-item">
+            <div class="micro">Location</div>
+            <span>BI Norwegian Business School, Oslo</span>
+          </div>
+          <div class="contact-item">
+            <div class="micro">AI Notes</div>
+            <a href="#ai-notes">Thoughts, notes and documents</a>
+          </div>
+          <div class="contact-item">
+            <div class="micro">Scholar</div>
+            <a href="https://scholar.google.com/citations?user=BgOf4TgAAAAJ&hl=no" target="_blank" rel="noopener">Google Scholar profile</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Fabian Nøst Harang · BI Norwegian Business School</span>
+      <img src="assets/amor-logo-white.png" alt="AMOR"/>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Fabian Nøst Harang",
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "BI Norwegian Business School",
+        "url": "https://www.bi.edu/"
+      },
+      "email": "mailto:fabian.harang@bi.no",
+      "url": "",
+      "sameAs": [
+        "https://scholar.google.com/citations?user=BgOf4TgAAAAJ&hl=no",
+        "https://arxiv.org/search/?query=%22Fabian+Harang%22&searchtype=author&abstracts=show&order=-announced_date_first&size=50",
+        "https://www.simula.no/sure-ai"
+      ],
+      "jobTitle": "Professor of Data Science",
+      "knowsAbout": [
+        "Signature methods in Data Science",
+        "Stochastic analysis",
+        "Applied stochastic modelling",
+        "Thoughts on AI",
+        "Trustworthy artificial intelligence"
+      ]
+    }
+  </script>
+</body>
+</html>
