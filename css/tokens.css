@@ -1,0 +1,75 @@
+/* Nordic Academic — design tokens
+   fabianharang.no · v1.0 · August 2026 */
+
+:root {
+  --paper: #FAF8F3;
+  --parchment: #F4F1E9;
+
+  --ink: #17181A;
+  --body: #33302B;
+  --muted: #6B665C;
+  --faint: #8A8478;
+
+  --rule: #E2DCCF;
+  --rule-strong: #C9C3B6;
+
+  --accent: #1F3A33;
+  --accent-dark: #17281F;
+
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, Menlo, monospace;
+
+  --fs-display: 78px;
+  --lh-display: 1.02;
+  --tr-display: 0;
+  --fs-h2: 42px;
+  --lh-h2: 1.14;
+  --tr-h2: 0;
+  --fs-h3: 36px;
+  --lh-h3: 1.15;
+  --fs-h4: 24px;
+  --lh-h4: 1.25;
+  --fs-lead: 19px;
+  --lh-lead: 1.6;
+  --fs-body: 18px;
+  --lh-body: 1.7;
+  --fs-small: 16px;
+  --lh-small: 1.65;
+  --fs-label: 11px;
+  --tr-label: 0;
+  --fs-nav: 12px;
+  --tr-nav: 0;
+
+  --page: 1280px;
+  --gutter: 72px;
+  --rail: 180px;
+  --grid-gap: 48px;
+  --section-y: 68px;
+  --measure: 34em;
+
+  --radius: 0;
+  --shadow: none;
+  --motion: 150ms ease;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 40px;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gutter: 24px;
+    --fs-display: 46px;
+    --lh-display: 1.06;
+    --fs-h2: 30px;
+    --lh-h2: 1.18;
+    --fs-h3: 26px;
+    --fs-h4: 21px;
+    --fs-body: 17px;
+    --tr-label: 0;
+    --section-y: 48px;
+  }
+}
