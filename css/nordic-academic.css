@@ -205,8 +205,8 @@ p {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
   align-items: start;
-  gap: 64px;
-  padding-block: 72px 64px;
+  gap: 54px;
+  padding-block: 48px 42px;
 }
 
 .eyebrow,
@@ -224,13 +224,13 @@ p {
 }
 
 .eyebrow {
-  margin-bottom: 26px;
+  margin-bottom: 18px;
   color: var(--muted);
 }
 
 .hero h1 {
   max-width: 10ch;
-  margin: 0 0 26px;
+  margin: 0 0 20px;
   color: var(--ink);
   font-size: var(--fs-display);
   line-height: var(--lh-display);
@@ -242,14 +242,14 @@ p {
   display: block;
   width: 64px;
   height: 1px;
-  margin-top: 26px;
+  margin-top: 20px;
   background: var(--accent);
 }
 
 .hero .role,
 .hero-lede {
   max-width: var(--measure);
-  margin: 0 0 30px;
+  margin: 0 0 22px;
   color: var(--body);
   font-family: var(--sans);
   font-size: var(--fs-lead);
@@ -269,7 +269,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin: 6px 0 30px;
+  margin: 4px 0 24px;
 }
 
 .btn {
@@ -377,9 +377,9 @@ p {
 .affiliations .wrap {
   display: flex;
   align-items: center;
-  min-height: 68px;
+  min-height: 58px;
   gap: 28px;
-  padding-block: 20px;
+  padding-block: 14px;
   flex-wrap: wrap;
 }
 
@@ -457,12 +457,12 @@ p {
   grid-template-columns: var(--rail) minmax(0, 1fr);
   align-items: start;
   column-gap: var(--grid-gap);
-  row-gap: 30px;
+  row-gap: 16px;
 }
 
 .section > .wrap::before {
   grid-column: 1;
-  grid-row: 1 / span 20;
+  grid-row: 1;
   padding-top: 10px;
   color: var(--muted);
   font-family: var(--sans);
@@ -531,7 +531,7 @@ p {
 
 .lead {
   max-width: var(--measure);
-  margin-top: 20px;
+  margin-top: 10px;
   color: var(--body);
   font-family: var(--sans);
   font-size: var(--fs-lead);
@@ -545,7 +545,7 @@ p {
 
 .prose p {
   max-width: var(--measure);
-  margin-bottom: 18px;
+  margin-bottom: 14px;
   color: var(--body);
   font-family: var(--sans);
   font-size: var(--fs-body);
@@ -554,7 +554,7 @@ p {
 
 .note,
 blockquote.blockquote {
-  margin-top: 26px;
+  margin-top: 14px;
   border-left: 1px solid var(--accent);
   padding: 0 0 0 22px;
   background: transparent;
@@ -577,7 +577,7 @@ blockquote.blockquote {
   grid-template-columns: 34px minmax(0, 1fr);
   gap: 18px;
   min-height: 0;
-  padding: 28px 32px 28px 0;
+  padding: 22px 28px 22px 0;
   border: 0;
   border-bottom: 1px solid var(--rule);
   background: transparent;
@@ -588,7 +588,7 @@ blockquote.blockquote {
 }
 
 .theme:nth-child(even) {
-  padding-left: 32px;
+  padding-left: 28px;
 }
 
 .theme:nth-last-child(-n + 2) {
@@ -624,8 +624,8 @@ blockquote.blockquote {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   gap: 24px;
-  margin-top: 36px;
-  padding: 24px 28px;
+  margin-top: 24px;
+  padding: 20px 24px;
   border: 1px solid var(--rule);
   background: var(--parchment);
 }
@@ -678,7 +678,7 @@ blockquote.blockquote {
 .link-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 44px;
+  gap: 32px;
 }
 
 .link-grid.two {
@@ -687,7 +687,7 @@ blockquote.blockquote {
 
 .link-panel {
   min-height: 0;
-  padding: 20px 0 0;
+  padding: 16px 0 0;
   border: 0;
   border-top: 1px solid var(--rule-strong);
   background: transparent;
@@ -728,7 +728,7 @@ blockquote.blockquote {
   grid-template-columns: 72px minmax(0, 1fr);
   gap: 24px;
   min-height: 0;
-  padding: 22px 0;
+  padding: 16px 0;
   border: 0;
   border-bottom: 1px solid var(--rule);
   background: transparent;
@@ -763,9 +763,9 @@ blockquote.blockquote {
   display: flex;
   flex-wrap: wrap;
   gap: 26px;
-  margin: 0 0 28px;
+  margin: 0 0 20px;
   border-bottom: 1px solid var(--rule);
-  padding-bottom: 18px;
+  padding-bottom: 14px;
 }
 
 .pub-tools a {
@@ -781,7 +781,7 @@ blockquote.blockquote {
   display: grid;
   grid-template-columns: 72px minmax(0, 1fr);
   gap: 24px;
-  padding: 20px 0;
+  padding: 16px 0;
   border-bottom: 1px solid var(--rule);
   transition: background-color var(--motion);
 }
@@ -844,7 +844,7 @@ blockquote.blockquote {
 
 .contact-item {
   min-height: 0;
-  padding: 18px 0;
+  padding: 14px 0;
   border: 0;
   border-top: 1px solid var(--rule-strong);
   background: transparent;
@@ -881,7 +881,7 @@ footer .wrap,
   justify-content: space-between;
   min-height: 72px;
   gap: 18px;
-  padding-block: 26px;
+  padding-block: 20px;
   flex-wrap: wrap;
 }
 
@@ -901,7 +901,7 @@ footer img {
 .post-hero {
   background: var(--paper);
   color: var(--body);
-  padding: 68px 0 64px;
+  padding: 42px 0 38px;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -1061,7 +1061,7 @@ footer img {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 32px;
-    padding-block: 48px 44px;
+    padding-block: 34px 30px;
   }
 
   .hero h1 {
@@ -1081,7 +1081,7 @@ footer img {
   .theme:nth-child(even),
   .theme:nth-child(odd),
   .theme:nth-last-child(-n + 2) {
-    padding: 24px 0;
+    padding: 18px 0;
     border-right: 0;
     border-bottom: 1px solid var(--rule);
   }

@@ -45,7 +45,7 @@
   --gutter: 72px;
   --rail: 180px;
   --grid-gap: 48px;
-  --section-y: 68px;
+  --section-y: 40px;
   --measure: 34em;
 
   --radius: 0;
@@ -70,6 +70,6 @@
     --fs-h4: 21px;
     --fs-body: 17px;
     --tr-label: 0;
-    --section-y: 48px;
+    --section-y: 30px;
   }
 }
