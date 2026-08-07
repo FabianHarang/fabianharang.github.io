@@ -351,7 +351,7 @@ p {
 }
 
 .identity::after {
-  content: "Photo: BI / Simula";
+  content: "Photo: BI";
   display: block;
   margin-top: 10px;
   color: var(--faint);
