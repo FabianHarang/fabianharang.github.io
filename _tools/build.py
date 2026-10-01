@@ -174,7 +174,7 @@ def generate(notes_dir=None):
     values.update(selected_papers=publication_list([p for p in publications if p.get('selected')]),
                   selected_writing='<ul class="writing-list">' + ''.join(writing_entry(w) for w in selected) + '</ul>')
     home = Template((SOURCE / 'pages/home.html').read_text()).substitute(values)
-    output['index.html'] = shell(NAME + ' — Research and writing', 'Stochastic analysis, signature methods and mathematical models for complex time series. Research, publications and writing by Fabian Nøst Harang.', home, '/', 'Home')
+    output['index.html'] = shell(NAME + ' — Research and writing', 'Stochastic analysis, signature methods and mathematical models for sequential data. Research, publications and writing by Fabian Nøst Harang.', home, '/', 'Home')
     research = Template((SOURCE / 'pages/research.html').read_text()).substitute(values)
     output['research.html'] = shell('Research | ' + NAME, 'Stochastic analysis, signature methods, applications and research collaborations.', research, '/research.html', 'Research')
     papers = '<h1>Publications</h1><p class="prose">Papers and preprints, with original author bylines and links to the listed arXiv versions. Journal details and the year first posted to arXiv are shown separately.</p>'
