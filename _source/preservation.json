@@ -1,0 +1,251 @@
+{
+  "homepage_ids": [
+    "primary-nav",
+    "top",
+    "main",
+    "about",
+    "research",
+    "ai-notes",
+    "news",
+    "publications",
+    "leadership",
+    "amor",
+    "contact"
+  ],
+  "assets": {
+    "assets/sureai-white.png": "07e2ec0b12baf78962ea1bcf87e828e2388f8b3f60d9316846330db2e951244d",
+    "assets/bi.png": "924ec466d31031768ce5cc52e494d1a1bb7195046431cf1362187b2fa9371318",
+    "assets/amor-icon-transparent.png": "e6bc52dd5174cc9c6d8ac756534772c8bb2abbf4ac2a5482b59a21bce609e6bd",
+    "assets/network-cover.png": "948e442c0c2f2dd5fcd9fb335a7ffdf3d8615e6e9d666c4d4fb2a1670f8604d9",
+    "assets/amor-logo-white.png": "b8653265e559199eab2a5bc808bf8171d542b3c0e82ed9c608c1b19d9c730c14",
+    "assets/Fabian-Harang.jpg": "c044a7d3be222390639b4ef8d74bd63d78a263f9eeec8a6b7bc1087fecc5f415",
+    "assets/amor-logo-dark.png": "0e24cff300c9748950189913760f62712ea0e6e21cdd83f211e690690d20e256",
+    "assets/contour-light.png": "49f4ed3be2915c3d57db302e18c7f67a685f5a031e00ab2530c8a2e7c7f427b3",
+    "assets/amor-icon-dark.png": "866b1fb4e193ce6b778f9e4db5a53cfb37a28164628a1539f7b190c6ce248d33",
+    "assets/terrain-dark.png": "ab9b0f02c12f1f0c9b68788588ca5ebccaf1b216f43b59c2fa4cc6e6054713db",
+    "assets/amor-icon-white.png": "b9b469f243bfe3d07e2d935fe955f4243ad7294e30819b136f4fab417f8dfc84",
+    "assets/amor-lockup-transparent.png": "25ac2c780f8f2777e6321c73cd36c144f1bc3998a76c3afa7bce914f1d07d4d2",
+    "assets/sure-ai-lockup-ink.png": "34addb6b7ecf5c84e381ff8abe575c76635f924c67053030c057dd19274faf2a"
+  },
+  "baseline_commit": "be75b9a",
+  "text_sha256": "652a4c4eda0de01bb500ecc986d973a6a675ea7d3056a2c96fa815b736874753",
+  "ids": [
+    "del-1-hvorfor-trenger-vi-det-forsikring.",
+    "vi-er-i-ferd-med-å-miste-vår-suverene-intelligens",
+    "analogien-vi-forsikrer-allerede-matjorda",
+    "cell-fig-jordbruk",
+    "fig-jordbruk",
+    "fig-jordbruk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "hva-er-den-diskonterte-nåverdien-av-denne-forsikringskostnaden",
+    "tbl-npv",
+    "tbl-npv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "det-avgjørende-skillet-et-fond-har-en-oppside",
+    "cell-fig-labs",
+    "fig-labs",
+    "fig-labs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "infrastrukturen-hvor-regnekraften-faktisk-står",
+    "cell-fig-compute",
+    "fig-compute",
+    "fig-compute-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "del-2-er-ikke-dette-industripolitikk-der-vi-håper-å-slå-markedet",
+    "draghi-rapporten-gapet-er-allerede-synlig",
+    "cell-fig-investering",
+    "fig-investering",
+    "fig-investering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "hvorfor-markedet-kan-låse-seg-fast-koordineringssvikt",
+    "virker-et-big-push-i-praksis-bevisene-fra-tennessee-dalen",
+    "hvilke-sektorer-mangler-koordinering-og-hvor-stort-er-gapet",
+    "cell-fig-verdikjede",
+    "fig-verdikjede",
+    "fig-verdikjede-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "cell-fig-marketcap",
+    "fig-marketcap",
+    "fig-marketcap-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "et-big-push-for-å-unngå-å-bli-akterutseilt-lærdommen-fra-argentina",
+    "cell-fig-argentina",
+    "fig-argentina",
+    "fig-argentina-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca",
+    "del-3-hvordan-gjøre-dette-i-praksis",
+    "mandat-hva-fondet-skal-og-ikke-skal-gjøre",
+    "avkastningsmål-additionalitet-og-crowding-in",
+    "styringsmodellen-hvor-fondet-bør-ligge",
+    "innfasing-geografi-solnedgang-og-eu-rett",
+    "en-mindre-inngripende-start-innenfor-handlingsregelen",
+    "konklusjon",
+    "kilder"
+  ],
+  "links": [],
+  "image_sha256": [
+    "cab544c518bd5426737a6f5ea2a35ef597f4ae593f634bb452684d0a33f23886",
+    "58a1d1a1bf0257e23a29666dade1903cccfc4822c3207ca0d5f6b8df7df889d0",
+    "acf36eb7c4653754c52902c3eb8772406b0625f281aeb8fea9a9f835de2c96de",
+    "c04f7c857ba180a8f237c9c2c6320b4787a5b1b69a6ffe21946f6c10902fea97",
+    "c7bcc98b18065da7c92522dbd974a3ca064e8e0f9ec2b1707018d3596c535bd2",
+    "d64aa49a8fc624d58016dad106c54aab9c1a76d0f3db5477920056dde44c55f5",
+    "ced3ad2dedd0d79c7f4b36bcb42bebc5f948e4805d920c34e4c5e431dda58baa"
+  ],
+  "publications": [
+    {
+      "title": "Computational aspects of the Volterra Signature",
+      "authors": "Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel",
+      "arxiv": "https://arxiv.org/abs/2605.18406v1",
+      "preprint_year": 2026
+    },
+    {
+      "title": "The Volterra signature",
+      "authors": "Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel",
+      "arxiv": "https://arxiv.org/abs/2603.04525v2",
+      "preprint_year": 2026
+    },
+    {
+      "title": "Stochastic Analysis of Overlapping Generations Models Under Incomplete Markets",
+      "authors": "Cangxiong Chen, Sigmund Ellingsrud, Fabian Harang, Alfonso Irarrazabal, Avi Mayorcas",
+      "arxiv": "https://arxiv.org/abs/2509.05170v1",
+      "preprint_year": 2025
+    },
+    {
+      "title": "Weak Existence for Degenerate Distribution Dependent SDEs with multiplicative Noise -- a pathwise regularization approach",
+      "authors": "Fabian Harang, Chengcheng Ling, Peter H. C. Pang",
+      "arxiv": "https://arxiv.org/abs/2509.03665v1",
+      "preprint_year": 2025
+    },
+    {
+      "title": "Universal approximation on non-geometric rough paths and applications to financial derivatives pricing",
+      "authors": "Fabian A. Harang, Fred Espen Benth, Fride Straum",
+      "arxiv": "https://arxiv.org/abs/2412.16009v2",
+      "preprint_year": 2024
+    },
+    {
+      "title": "On the signature of an image",
+      "authors": "Joscha Diehl, Kurusch Ebrahimi-Fard, Fabian Harang, Samy Tindel",
+      "arxiv": "https://arxiv.org/abs/2403.00130v1",
+      "preprint_year": 2024
+    },
+    {
+      "title": "Pathwise regularization by noise for semilinear SPDEs driven by a multiplicative cylindrical Brownian motion",
+      "authors": "Florian Bechtold, Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/2311.00764v1",
+      "preprint_year": 2023
+    },
+    {
+      "title": "A multiparameter Stochastic Sewing lemma and the regularity of local times associated to Gaussian sheets",
+      "authors": "Florian Bechtold, Fabian A. Harang, Hannes Kern",
+      "arxiv": "https://arxiv.org/abs/2307.11527v1",
+      "preprint_year": 2023
+    },
+    {
+      "title": "Dynamic spending and portfolio decisions with a soft social norm",
+      "authors": "Knut Anton Mork, Fabian Andsem Harang, Haakon Andreas Trønnes, Vegard Skonseng Bjerketvedt",
+      "arxiv": "https://arxiv.org/abs/2212.10053v1",
+      "preprint_year": 2022
+    },
+    {
+      "title": "Non-linear Young equations in the plane and pathwise regularization by noise for the stochastic wave equation",
+      "authors": "Florian Bechtold, Fabian A. Harang, Nimit Rana",
+      "arxiv": "https://arxiv.org/abs/2206.05360v2",
+      "preprint_year": 2022
+    },
+    {
+      "title": "Volterra equations driven by rough signals 3: Probabilistic construction of the Volterra rough path for fractional Brownian motions",
+      "authors": "Fabian Harang, Samy Tindel, Xiaohua Wang",
+      "arxiv": "https://arxiv.org/abs/2202.05076v1",
+      "preprint_year": 2022
+    },
+    {
+      "title": "Distribution dependent SDEs driven by additive fractional Brownian motion",
+      "authors": "Lucio Galeati, Fabian A. Harang, Avi Mayorcas",
+      "arxiv": "https://arxiv.org/abs/2105.14063v1",
+      "preprint_year": 2021
+    },
+    {
+      "title": "Distribution dependent SDEs driven by additive continuous noise",
+      "authors": "Lucio Galeati, Fabian A. Harang, Avi Mayorcas",
+      "arxiv": "https://arxiv.org/abs/2105.14056v1",
+      "preprint_year": 2021
+    },
+    {
+      "title": "Volterra equations driven by rough signals 2: higher order expansions",
+      "authors": "Fabian A. Harang, Samy Tindel, Xiaohua Wang",
+      "arxiv": "https://arxiv.org/abs/2102.10119v1",
+      "preprint_year": 2021
+    },
+    {
+      "title": "Pathwise regularization of the stochastic heat equation with multiplicative noise through irregular perturbation",
+      "authors": "Rémi Catellier, Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/2101.00915v1",
+      "preprint_year": 2021
+    },
+    {
+      "title": "Pathwise Regularisation of Singular Interacting Particle Systems and their Mean Field Limits",
+      "authors": "Fabian Harang, Avi Mayorcas",
+      "arxiv": "https://arxiv.org/abs/2010.15517v2",
+      "preprint_year": 2020
+    },
+    {
+      "title": "Log-modulated rough stochastic volatility models",
+      "authors": "Christian Bayer, Fabian Andsem Harang, Paolo Pigato",
+      "arxiv": "https://arxiv.org/abs/2008.03204v2",
+      "preprint_year": 2020
+    },
+    {
+      "title": "Regularization of multiplicative SDEs through additive noise",
+      "authors": "Lucio Galeati, Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/2008.02335v1",
+      "preprint_year": 2020
+    },
+    {
+      "title": "Regularity of Local times associated to Volterra-Lévy processes and path-wise regularization of stochastic differential equations",
+      "authors": "Fabian A. Harang, Chengcheng Ling",
+      "arxiv": "https://arxiv.org/abs/2007.01093v3",
+      "preprint_year": 2020
+    },
+    {
+      "title": "Infinite Dimensional Pathwise Volterra Processes Driven by Gaussian Noise -- Probabilistic Properties and Applications",
+      "authors": "Fred E. Benth, Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/2005.14460v1",
+      "preprint_year": 2020
+    },
+    {
+      "title": "C-infinity regularization of ODEs perturbed by noise",
+      "authors": "Fabian A. Harang, Nicolas Perkowski",
+      "arxiv": "https://arxiv.org/abs/2003.05816v2",
+      "preprint_year": 2020
+    },
+    {
+      "title": "Volterra Equations Driven by Rough Signals",
+      "authors": "Fabian A. Harang, Samy Tindel",
+      "arxiv": "https://arxiv.org/abs/1912.02064v2",
+      "preprint_year": 2019
+    },
+    {
+      "title": "Self-Exciting Multifractional Processes",
+      "authors": "Fabian A. Harang, Marc Lagunas-Merino, Salvador Ortiz-Latorre",
+      "arxiv": "https://arxiv.org/abs/1908.05523v1",
+      "preprint_year": 2019
+    },
+    {
+      "title": "An extension of the sewing lemma to hyper-cubes and hyperbolic equations driven by multi parameter Young fields",
+      "authors": "Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/1806.09915v4",
+      "preprint_year": 2018
+    },
+    {
+      "title": "A Bismut-Elworthy-Li Formula for Singular SDE's Driven by a Fractional Brownian Motion and Applications to Rough Volatility Modeling",
+      "authors": "Oussama Amine, Emmanuel Coffie, Fabian Harang, Frank Proske",
+      "arxiv": "https://arxiv.org/abs/1805.11435v1",
+      "preprint_year": 2018
+    },
+    {
+      "title": "Differential Equations Driven by Variable Order Hölder Noise, and the Regularizing Effect of Delay",
+      "authors": "Fabian A. Harang",
+      "arxiv": "https://arxiv.org/abs/1803.04369v2",
+      "preprint_year": 2018
+    },
+    {
+      "title": "Girsanov Theorem for Multifractional Brownian Processes",
+      "authors": "Fabian Harang, Torstein Nilssen, Frank Proske",
+      "arxiv": "https://arxiv.org/abs/1706.07387v2",
+      "preprint_year": 2017
+    }
+  ]
+}

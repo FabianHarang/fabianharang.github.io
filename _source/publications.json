@@ -1,0 +1,471 @@
+[
+  {
+    "id": "paper-28",
+    "title": "Dynamic Universal Approximation via Signature Controlled Differential Equations",
+    "authors": "Tomás Carrondo, Christa Cuchiero, Paul P. Hager, Fabian N. Harang",
+    "preprint_year": 2026,
+    "arxiv": "https://arxiv.org/abs/2607.13886v1",
+    "venue": "",
+    "doi": null,
+    "code": null,
+    "selected": true,
+    "publication_status": "preprint",
+    "metadata_sources": [
+      "https://arxiv.org/abs/2607.13886v1"
+    ],
+    "summary": "Well-posedness and dynamic universal approximation for signature controlled differential equations."
+  },
+  {
+    "id": "paper-1",
+    "title": "Computational aspects of the Volterra Signature",
+    "authors": "Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel",
+    "preprint_year": 2026,
+    "arxiv": "https://arxiv.org/abs/2605.18406v1",
+    "venue": "Software: hagerpa/tensordev",
+    "doi": null,
+    "code": "https://github.com/hagerpa/tensordev",
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2605.18406v1"
+    ],
+    "summary": "Computational methods for Volterra signatures and their implementation in tensordev.",
+    "publication_status": "preprint"
+  },
+  {
+    "id": "paper-2",
+    "title": "The Volterra signature",
+    "authors": "Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel",
+    "preprint_year": 2026,
+    "arxiv": "https://arxiv.org/abs/2603.04525v2",
+    "venue": "",
+    "doi": null,
+    "code": null,
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2603.04525v2"
+    ],
+    "publication_status": "preprint"
+  },
+  {
+    "id": "paper-3",
+    "title": "Stochastic Analysis of Overlapping Generations Models Under Incomplete Markets",
+    "authors": "Cangxiong Chen, Sigmund Ellingsrud, Fabian Harang, Alfonso Irarrazabal, Avi Mayorcas",
+    "preprint_year": 2025,
+    "arxiv": "https://arxiv.org/abs/2509.05170v1",
+    "venue": "",
+    "doi": "10.1007/s11579-026-00418-5",
+    "code": null,
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2509.05170v1",
+      "https://api.crossref.org/works/10.1007/s11579-026-00418-5"
+    ],
+    "journal_ref": "Mathematics and Financial Economics, 20(2), 405-453 (2026).",
+    "publication_year": 2026,
+    "summary": "Stochastic modelling of overlapping generations in an economy with incomplete markets."
+  },
+  {
+    "id": "paper-4",
+    "title": "Weak Existence for Degenerate Distribution Dependent SDEs with multiplicative Noise -- a pathwise regularization approach",
+    "authors": "Fabian Harang, Chengcheng Ling, Peter H. C. Pang",
+    "preprint_year": 2025,
+    "arxiv": "https://arxiv.org/abs/2509.03665v1",
+    "venue": "",
+    "doi": null,
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2509.03665v1"
+    ]
+  },
+  {
+    "id": "paper-5",
+    "title": "Universal approximation on non-geometric rough paths and applications to financial derivatives pricing",
+    "authors": "Fabian A. Harang, Fred Espen Benth, Fride Straum",
+    "preprint_year": 2024,
+    "arxiv": "https://arxiv.org/abs/2412.16009v2",
+    "venue": "",
+    "doi": "10.1080/1350486X.2026.2659017",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2412.16009v2",
+      "https://api.crossref.org/works/10.1080/1350486X.2026.2659017"
+    ],
+    "journal_ref": "Applied Mathematical Finance, 32(5), 319-355 (2025).",
+    "publication_year": 2025
+  },
+  {
+    "id": "paper-6",
+    "title": "On the signature of an image",
+    "authors": "Joscha Diehl, Kurusch Ebrahimi-Fard, Fabian Harang, Samy Tindel",
+    "preprint_year": 2024,
+    "arxiv": "https://arxiv.org/abs/2403.00130v1",
+    "venue": "Stochastic Processes and their Applications, 187, 104661, 2025. DOI: 10.1016/j.spa.2025.104661",
+    "doi": "10.1016/j.spa.2025.104661",
+    "code": null,
+    "selected": true,
+    "journal_ref": "Stochastic Processes and their Applications, 187, 104661 (2025).",
+    "metadata_sources": [
+      "https://arxiv.org/abs/2403.00130v1",
+      "https://api.crossref.org/works/10.1016/j.spa.2025.104661"
+    ],
+    "publication_year": 2025,
+    "summary": "Extending signature methods from paths to image-type data."
+  },
+  {
+    "id": "paper-7",
+    "title": "Pathwise regularization by noise for semilinear SPDEs driven by a multiplicative cylindrical Brownian motion",
+    "authors": "Florian Bechtold, Fabian A. Harang",
+    "preprint_year": 2023,
+    "arxiv": "https://arxiv.org/abs/2311.00764v1",
+    "venue": "",
+    "doi": "10.1142/S021902572450019X",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2311.00764v1",
+      "https://api.crossref.org/works/10.1142/S021902572450019X"
+    ],
+    "journal_ref": "Infinite Dimensional Analysis, Quantum Probability and Related Topics, 28(01), 2450019 (2025).",
+    "publication_year": 2025
+  },
+  {
+    "id": "paper-8",
+    "title": "A multiparameter Stochastic Sewing lemma and the regularity of local times associated to Gaussian sheets",
+    "authors": "Florian Bechtold, Fabian A. Harang, Hannes Kern",
+    "preprint_year": 2023,
+    "arxiv": "https://arxiv.org/abs/2307.11527v1",
+    "venue": "",
+    "doi": null,
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2307.11527v1"
+    ]
+  },
+  {
+    "id": "paper-9",
+    "title": "Dynamic spending and portfolio decisions with a soft social norm",
+    "authors": "Knut Anton Mork, Fabian Andsem Harang, Haakon Andreas Trønnes, Vegard Skonseng Bjerketvedt",
+    "preprint_year": 2022,
+    "arxiv": "https://arxiv.org/abs/2212.10053v1",
+    "venue": "",
+    "doi": "10.1016/j.jedc.2023.104667",
+    "code": null,
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2212.10053v1",
+      "https://api.crossref.org/works/10.1016/j.jedc.2023.104667"
+    ],
+    "journal_ref": "Journal of Economic Dynamics and Control, 151, 104667 (2023).",
+    "publication_year": 2023
+  },
+  {
+    "id": "paper-10",
+    "title": "Non-linear Young equations in the plane and pathwise regularization by noise for the stochastic wave equation",
+    "authors": "Florian Bechtold, Fabian A. Harang, Nimit Rana",
+    "preprint_year": 2022,
+    "arxiv": "https://arxiv.org/abs/2206.05360v2",
+    "venue": "",
+    "doi": "10.1007/s40072-023-00295-9",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2206.05360v2",
+      "https://api.crossref.org/works/10.1007/s40072-023-00295-9"
+    ],
+    "journal_ref": "Stochastics and Partial Differential Equations: Analysis and Computations, 12(2), 857-897 (2024).",
+    "publication_year": 2024
+  },
+  {
+    "id": "paper-11",
+    "title": "Volterra equations driven by rough signals 3: Probabilistic construction of the Volterra rough path for fractional Brownian motions",
+    "authors": "Fabian Harang, Samy Tindel, Xiaohua Wang",
+    "preprint_year": 2022,
+    "arxiv": "https://arxiv.org/abs/2202.05076v1",
+    "venue": "",
+    "doi": "10.1007/s10959-023-01251-y",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2202.05076v1",
+      "https://api.crossref.org/works/10.1007/s10959-023-01251-y"
+    ],
+    "journal_ref": "Journal of Theoretical Probability, 37(1), 307-351 (2024).",
+    "publication_year": 2024
+  },
+  {
+    "id": "paper-12",
+    "title": "Distribution dependent SDEs driven by additive fractional Brownian motion",
+    "authors": "Lucio Galeati, Fabian A. Harang, Avi Mayorcas",
+    "preprint_year": 2021,
+    "arxiv": "https://arxiv.org/abs/2105.14063v1",
+    "venue": "",
+    "doi": "10.1007/s00440-022-01145-w",
+    "code": null,
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2105.14063v1",
+      "https://api.crossref.org/works/10.1007/s00440-022-01145-w"
+    ],
+    "journal_ref": "Probability Theory and Related Fields, 185(1-2), 251-309 (2023).",
+    "publication_year": 2023
+  },
+  {
+    "id": "paper-13",
+    "title": "Distribution dependent SDEs driven by additive continuous noise",
+    "authors": "Lucio Galeati, Fabian A. Harang, Avi Mayorcas",
+    "preprint_year": 2021,
+    "arxiv": "https://arxiv.org/abs/2105.14056v1",
+    "venue": "Electronic Journal of Probability, 27, 1-38, 2022. DOI: 10.1214/22-EJP756",
+    "doi": "10.1214/22-EJP756",
+    "code": null,
+    "selected": true,
+    "journal_ref": "Electronic Journal of Probability, 27, 1–38 (2022).",
+    "metadata_sources": [
+      "https://arxiv.org/abs/2105.14056v1",
+      "https://api.crossref.org/works/10.1214/22-EJP756"
+    ],
+    "publication_year": 2022
+  },
+  {
+    "id": "paper-14",
+    "title": "Volterra equations driven by rough signals 2: higher order expansions",
+    "authors": "Fabian A. Harang, Samy Tindel, Xiaohua Wang",
+    "preprint_year": 2021,
+    "arxiv": "https://arxiv.org/abs/2102.10119v1",
+    "venue": "",
+    "doi": "10.1142/S0219493723500028",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2102.10119v1",
+      "https://api.crossref.org/works/10.1142/S0219493723500028"
+    ],
+    "journal_ref": "Stochastics and Dynamics, 23(01), 2350002 (2023).",
+    "publication_year": 2023
+  },
+  {
+    "id": "paper-15",
+    "title": "Pathwise regularization of the stochastic heat equation with multiplicative noise through irregular perturbation",
+    "authors": "Rémi Catellier, Fabian A. Harang",
+    "preprint_year": 2021,
+    "arxiv": "https://arxiv.org/abs/2101.00915v1",
+    "venue": "",
+    "doi": "10.1214/22-AIHP1302",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2101.00915v1",
+      "https://api.crossref.org/works/10.1214/22-AIHP1302"
+    ],
+    "journal_ref": "Annales de l'Institut Henri Poincaré, Probabilités et Statistiques, 59(3), 1572–1609 (2023).",
+    "publication_year": 2023
+  },
+  {
+    "id": "paper-16",
+    "title": "Pathwise Regularisation of Singular Interacting Particle Systems and their Mean Field Limits",
+    "authors": "Fabian Harang, Avi Mayorcas",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2010.15517v2",
+    "venue": "DOI: 10.1016/j.spa.2023.02.005",
+    "doi": "10.1016/j.spa.2023.02.005",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2010.15517v2",
+      "https://api.crossref.org/works/10.1016/j.spa.2023.02.005"
+    ],
+    "journal_ref": "Stochastic Processes and their Applications, 159, 499-540 (2023).",
+    "publication_year": 2023,
+    "summary": "Regularization by noise for interacting particle systems and their mean field limits."
+  },
+  {
+    "id": "paper-17",
+    "title": "Log-modulated rough stochastic volatility models",
+    "authors": "Christian Bayer, Fabian Andsem Harang, Paolo Pigato",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2008.03204v2",
+    "venue": "",
+    "doi": "10.1137/20M135902X",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2008.03204v2",
+      "https://api.crossref.org/works/10.1137/20M135902X"
+    ],
+    "journal_ref": "SIAM Journal on Financial Mathematics, 12(3), 1257-1284 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-18",
+    "title": "Regularization of multiplicative SDEs through additive noise",
+    "authors": "Lucio Galeati, Fabian A. Harang",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2008.02335v1",
+    "venue": "",
+    "doi": "10.1214/21-AAP1778",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2008.02335v1",
+      "https://api.crossref.org/works/10.1214/21-AAP1778"
+    ],
+    "journal_ref": "The Annals of Applied Probability, 32(5), 3930–3963 (2022).",
+    "publication_year": 2022
+  },
+  {
+    "id": "paper-19",
+    "title": "Regularity of Local times associated to Volterra-Lévy processes and path-wise regularization of stochastic differential equations",
+    "authors": "Fabian A. Harang, Chengcheng Ling",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2007.01093v3",
+    "venue": "",
+    "doi": "10.1007/s10959-021-01114-4",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2007.01093v3",
+      "https://api.crossref.org/works/10.1007/s10959-021-01114-4"
+    ],
+    "journal_ref": "Journal of Theoretical Probability, 35(3), 1706-1735 (2022).",
+    "publication_year": 2022
+  },
+  {
+    "id": "paper-20",
+    "title": "Infinite Dimensional Pathwise Volterra Processes Driven by Gaussian Noise -- Probabilistic Properties and Applications",
+    "authors": "Fred E. Benth, Fabian A. Harang",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2005.14460v1",
+    "venue": "",
+    "doi": "10.1214/21-EJP683",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2005.14460v1",
+      "https://api.crossref.org/works/10.1214/21-EJP683"
+    ],
+    "journal_ref": "Electronic Journal of Probability, 26 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-21",
+    "title": "C-infinity regularization of ODEs perturbed by noise",
+    "authors": "Fabian A. Harang, Nicolas Perkowski",
+    "preprint_year": 2020,
+    "arxiv": "https://arxiv.org/abs/2003.05816v2",
+    "venue": "",
+    "doi": "10.1142/S0219493721400104",
+    "code": null,
+    "selected": true,
+    "metadata_sources": [
+      "https://arxiv.org/abs/2003.05816v2",
+      "https://api.crossref.org/works/10.1142/S0219493721400104"
+    ],
+    "journal_ref": "Stochastics and Dynamics, 21(08), 2140010 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-22",
+    "title": "Volterra Equations Driven by Rough Signals",
+    "authors": "Fabian A. Harang, Samy Tindel",
+    "preprint_year": 2019,
+    "arxiv": "https://arxiv.org/abs/1912.02064v2",
+    "venue": "",
+    "doi": "10.1016/j.spa.2021.08.001",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1912.02064v2",
+      "https://api.crossref.org/works/10.1016/j.spa.2021.08.001"
+    ],
+    "journal_ref": "Stochastic Processes and their Applications, 142, 34-78 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-23",
+    "title": "Self-Exciting Multifractional Processes",
+    "authors": "Fabian A. Harang, Marc Lagunas-Merino, Salvador Ortiz-Latorre",
+    "preprint_year": 2019,
+    "arxiv": "https://arxiv.org/abs/1908.05523v1",
+    "venue": "",
+    "doi": "10.1017/jpr.2020.88",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1908.05523v1",
+      "https://api.crossref.org/works/10.1017/jpr.2020.88"
+    ],
+    "journal_ref": "Journal of Applied Probability, 58(1), 22-41 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-24",
+    "title": "An extension of the sewing lemma to hyper-cubes and hyperbolic equations driven by multi parameter Young fields",
+    "authors": "Fabian A. Harang",
+    "preprint_year": 2018,
+    "arxiv": "https://arxiv.org/abs/1806.09915v4",
+    "venue": "",
+    "doi": "10.1007/s40072-020-00184-5",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1806.09915v4",
+      "https://api.crossref.org/works/10.1007/s40072-020-00184-5"
+    ],
+    "journal_ref": "Stochastics and Partial Differential Equations: Analysis and Computations, 9(3), 746-788 (2021).",
+    "publication_year": 2021
+  },
+  {
+    "id": "paper-25",
+    "title": "A Bismut-Elworthy-Li Formula for Singular SDE's Driven by a Fractional Brownian Motion and Applications to Rough Volatility Modeling",
+    "authors": "Oussama Amine, Emmanuel Coffie, Fabian Harang, Frank Proske",
+    "preprint_year": 2018,
+    "arxiv": "https://arxiv.org/abs/1805.11435v1",
+    "venue": "",
+    "doi": "10.4310/CMS.2020.v18.n7.a3",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1805.11435v1",
+      "https://api.crossref.org/works/10.4310/CMS.2020.v18.n7.a3"
+    ],
+    "journal_ref": "Communications in Mathematical Sciences, 18(7), 1863-1890 (2020).",
+    "publication_year": 2020
+  },
+  {
+    "id": "paper-26",
+    "title": "Differential Equations Driven by Variable Order Hölder Noise, and the Regularizing Effect of Delay",
+    "authors": "Fabian A. Harang",
+    "preprint_year": 2018,
+    "arxiv": "https://arxiv.org/abs/1803.04369v2",
+    "venue": "",
+    "doi": "10.1080/17442508.2019.1602130",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1803.04369v2",
+      "https://api.crossref.org/works/10.1080/17442508.2019.1602130"
+    ],
+    "journal_ref": "Stochastics, 92(1), 90-123 (2020).",
+    "publication_year": 2020
+  },
+  {
+    "id": "paper-27",
+    "title": "Girsanov Theorem for Multifractional Brownian Processes",
+    "authors": "Fabian Harang, Torstein Nilssen, Frank Proske",
+    "preprint_year": 2017,
+    "arxiv": "https://arxiv.org/abs/1706.07387v2",
+    "venue": "",
+    "doi": "10.1080/17442508.2022.2027948",
+    "code": null,
+    "selected": false,
+    "metadata_sources": [
+      "https://arxiv.org/abs/1706.07387v2",
+      "https://api.crossref.org/works/10.1080/17442508.2022.2027948"
+    ],
+    "journal_ref": "Stochastics, 94(8), 1137-1165 (2022).",
+    "publication_year": 2022
+  }
+]

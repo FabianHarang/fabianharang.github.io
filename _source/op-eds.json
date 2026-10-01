@@ -1,0 +1,36 @@
+[
+  {
+    "title": "KI og det stille utenforskapet",
+    "route": "https://www.dn.no/innlegg/kunstig-intelligens/arbeidsledighet/trygd/ki-og-det-stille-utenforskapet/2-1-2022093",
+    "authors": ["Andreas Ravndal Kostøl", "Fabian Nøst Harang"],
+    "kind": "op_ed",
+    "outlet": "Dagens Næringsliv",
+    "language": "nb",
+    "date_published": "2026-07-29",
+    "summary": "On how AI can make entry into working life harder without appearing in unemployment figures."
+  },
+  {
+    "title": "Maskiner må løfte mennesker",
+    "route": "https://www.dn.no/innlegg/skattekommisjonen/kunstig-intelligens/automatisering/maskiner-ma-lofte-mennesker/2-1-2010859",
+    "authors": ["Fabian Nøst Harang", "Andreas Ravndal Kostøl"],
+    "kind": "op_ed",
+    "outlet": "Dagens Næringsliv",
+    "language": "nb",
+    "date_published": "2026-06-29",
+    "summary": "On tax incentives that support the use of AI to strengthen workers’ position."
+  },
+  {
+    "title": "Et land som ikke kan tenke selv, er ikke fritt",
+    "route": "https://www.dn.no/innlegg/kunstig-intelligens/ki/ai/et-land-som-ikke-kan-tenke-selv-er-ikke-fritt/2-1-2004648",
+    "authors": ["Andreas Ravndal Kostøl", "Fabian Nøst Harang"],
+    "kind": "op_ed",
+    "outlet": "Dagens Næringsliv",
+    "language": "nb",
+    "date_published": "2026-06-16",
+    "summary": "On European AI capacity and a Norwegian–European investment fund.",
+    "related_article": {
+      "route": "/ai/blog/ai-fondet.html",
+      "title": "Extended exposition: KI-fondet"
+    }
+  }
+]
