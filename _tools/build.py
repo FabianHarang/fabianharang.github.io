@@ -178,7 +178,7 @@ def generate(notes_dir=None):
     research = Template((SOURCE / 'pages/research.html').read_text()).substitute(values)
     output['research.html'] = shell('Research | ' + NAME, 'Stochastic analysis, signature methods, applications and research collaborations.', research, '/research.html', 'Research')
     papers = '<h1>Publications</h1><p class="prose">Papers and preprints, with original author bylines and links to the listed arXiv versions. Journal details and the year first posted to arXiv are shown separately.</p>'
-    papers += '<p class="text-links"><a href="' + escape(LINKS['scholar_url'], quote=True) + '">Google Scholar</a><a href="' + escape(LINKS['arxiv_url'], quote=True) + '">arXiv record</a><a href="mailto:fabian.harang@bi.no?subject=CV%20request">Request CV</a></p>'
+    papers += '<p class="text-links"><a href="' + escape(LINKS['scholar_url'], quote=True) + '">Google Scholar</a><a href="' + escape(LINKS['arxiv_url'], quote=True) + '">arXiv record</a><a href="mailto:fabian.a.harang@bi.no?subject=CV%20request">Request CV</a></p>'
     for title, items in [('Published work', [p for p in publications if p.get('journal_ref') or p.get('doi')]),
                          ('Further papers and preprints', [p for p in publications if not (p.get('journal_ref') or p.get('doi'))])]:
         if items:
