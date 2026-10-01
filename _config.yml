@@ -1,0 +1,9 @@
+# GitHub Pages still serves the committed static HTML from main /.
+# Sources, tooling and author documentation are not public web routes.
+exclude:
+  - _source
+  - _tools
+  - README.md
+  - AUTHORING.md
+  - .github
+  - .gitignore

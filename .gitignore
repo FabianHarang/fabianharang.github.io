@@ -2,3 +2,8 @@
 AMOR design profile/
 Fabian Personal w logos/
 KI-fondet-nettside/
+__pycache__/
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
