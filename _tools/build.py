@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 import shutil
 from string import Template
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / '_source'
@@ -39,7 +40,8 @@ def shell(title, description, body, route, active='', language='en', extra=''):
 
 def publication(item):
     venue = item.get('journal_ref') or (item['venue'] if not item.get('code') else '')
-    status = 'Published' if item.get('journal_ref') or item.get('doi') else 'arXiv record'
+    status = ('Published' if item.get('journal_ref') or item.get('doi')
+              else 'Preprint' if item.get('publication_status') == 'preprint' else 'arXiv record')
     year = f"First posted {item['preprint_year']}"
     links = f'<a href="{escape(item["arxiv"], quote=True)}">arXiv</a>'
     if item.get('doi'):
@@ -119,9 +121,16 @@ def note_body(note):
 
 
 def writing_entry(item):
-    return (f'<li><h3><a href="{item["route"]}" lang="{item["language"]}">{escape(item["title"])}</a></h3>'
-            f'<p class="metadata">{escape(KINDS[item["kind"]])} · {escape(item["date_published"])} · {LANGUAGES[item["language"]]}</p>'
-            f'<p class="authors">{escape(", ".join(item["authors"]))}</p><p>{escape(item["summary"])}</p></li>')
+    kind = 'Op-ed' if item['kind'] == 'op_ed' else KINDS[item['kind']]
+    metadata = [kind]
+    if item.get('outlet'):
+        metadata.append(item['outlet'])
+    metadata.extend([item['date_published'], LANGUAGES[item['language']]])
+    related = item.get('related_article')
+    return (f'<li><h3><a href="{escape(item["route"], quote=True)}" lang="{item["language"]}">{escape(item["title"])}</a></h3>'
+            f'<p class="metadata">{escape(" · ".join(metadata))}</p>'
+            f'<p class="authors">{escape(", ".join(item["authors"]))}</p><p>{escape(item["summary"])}</p>'
+            + (f'<p><a href="{escape(related["route"], quote=True)}">{escape(related["title"])}</a></p>' if related else '') + '</li>')
 
 
 def generate(notes_dir=None):
@@ -134,6 +143,19 @@ def generate(notes_dir=None):
             or writing[0].get('publication_state') != 'published'
             or writing[0].get('author_approved') is not True):
         raise ValueError('writing.json must retain the approved legacy article; add new writing through _source/notes')
+    # External op-eds are links to already published work, never local note bodies.
+    op_eds = read_json(SOURCE / 'op-eds.json')
+    for item in op_eds:
+        url = urlsplit(item['route'])
+        if (url.scheme != 'https' or not url.netloc or url.netloc == urlsplit(SITE).netloc
+                or item.get('kind') != 'op_ed'):
+            raise ValueError('Op-eds must link to an external HTTPS publication')
+        date.fromisoformat(item['date_published'])
+    op_eds.sort(key=lambda item: item['date_published'], reverse=True)
+    legacy = writing[0]
+    related_op_ed = next((item for item in op_eds if item.get('related_article', {}).get('route') == legacy['route']), None)
+    if related_op_ed:
+        legacy['related_article'] = {'route': related_op_ed['route'], 'title': 'Read the original op-ed in Dagens Næringsliv'}
     output = {}
     for note, path in notes:
         route = '/writing/notes/' + note['slug'] + '.html'
@@ -143,9 +165,9 @@ def generate(notes_dir=None):
             output['writing/notes/' + note['slug'] + '/' + asset] = (path.parent / asset).read_bytes()
     writing.sort(key=lambda item: item['date_published'], reverse=True)
     entries = '<ul class="writing-list">' + ''.join(writing_entry(w) for w in writing) + '</ul>'
+    op_ed_entries = '<ul class="writing-list">' + ''.join(writing_entry(w) for w in op_eds) + '</ul>'
     # Always retain the legacy essay on the homepage as new notes are added.
-    selected = writing[:2]
-    legacy = next(w for w in writing if w['route'] == '/ai/blog/ai-fondet.html')
+    selected = sorted(writing + op_eds, key=lambda item: item['date_published'], reverse=True)[:2]
     if legacy not in selected:
         selected.append(legacy)
     values = {k: escape(v, quote=True) for k, v in LINKS.items()}
@@ -162,12 +184,19 @@ def generate(notes_dir=None):
         if items:
             papers += '<section><h2>' + title + '</h2>' + publication_list(items) + '</section>'
     output['publications.html'] = shell('Publications | ' + NAME, 'Publications and preprints by Fabian Nøst Harang and coauthors.', papers, '/publications.html', 'Publications')
-    output['writing.html'] = shell('Writing | ' + NAME, 'Research notes, explanations and commentary by Fabian Nøst Harang and coauthors.', '<div class="prose"><h1>Writing</h1>' + entries + '</div>', '/writing.html', 'Writing')
+    writing_body = '<div class="prose"><h1>Writing &amp; communication</h1><p>Op-eds, commentary and longer explanations by Fabian Nøst Harang and coauthors.</p>'
+    if op_eds:
+        writing_body += '<section aria-labelledby="op-eds-title"><h2 id="op-eds-title">Op-eds</h2>' + op_ed_entries + '</section>'
+    writing_body += '<section aria-labelledby="essays-title"><h2 id="essays-title">Notes &amp; essays</h2>' + entries + '</section></div>'
+    output['writing.html'] = shell('Writing & communication | ' + NAME, 'Op-eds, research notes and commentary by Fabian Nøst Harang and coauthors.', writing_body, '/writing.html', 'Writing')
     article = (SOURCE / 'articles/ai-fondet.html').read_text()
     article = article.replace('<table ', '<div class="table-scroll" role="region" aria-label="Tabell 1" tabindex="0"><table ').replace('</table>', '</table></div>')
     schema = (SOURCE / 'articles/ai-fondet.schema.json').read_text()
     extra = '<meta property="og:type" content="article"><meta property="og:image" content="' + SITE + '/assets/network-cover.png"><script type="application/ld+json">' + schema + '</script>'
-    output['ai/blog/ai-fondet.html'] = shell('KI-fondet | ' + NAME, 'En forsikring for europeisk suveren intelligens, av Andreas Ravndal Kostøl og Fabian Nøst Harang.', '<p class="article-nav" lang="en"><a href="/writing.html">Writing</a> · Commentary · Norwegian Bokmål</p><article class="article-body" id="article-content">' + article + '</article>', '/ai/blog/ai-fondet.html', 'Writing', 'nb', extra)
+    article_context = ''
+    if related_op_ed:
+        article_context = '<p class="article-nav">Denne teksten utdyper innlegget <a href="' + escape(related_op_ed['route'], quote=True) + '">«' + escape(related_op_ed['title']) + '»</a> i Dagens Næringsliv.</p>'
+    output['ai/blog/ai-fondet.html'] = shell('KI-fondet | ' + NAME, 'En forsikring for europeisk suveren intelligens, av Andreas Ravndal Kostøl og Fabian Nøst Harang.', '<p class="article-nav" lang="en"><a href="/writing.html">Writing &amp; communication</a> · Commentary · Norwegian Bokmål</p>' + article_context + '<article class="article-body" id="article-content">' + article + '</article>', '/ai/blog/ai-fondet.html', 'Writing', 'nb', extra)
     output['ai/blog/ai-fondet.content.html'] = '''<!doctype html><html lang="nb"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KI-fondet</title><link rel="canonical" href="https://www.fabianharang.no/ai/blog/ai-fondet.html"></head><body><p><a href="ai-fondet.html">Les KI-fondet</a></p><script>location.replace('ai-fondet.html' + location.hash);</script></body></html>'''
     output['404.html'] = shell('Page not found | ' + NAME, 'This page could not be found.', '<div class="prose"><h1>Page not found</h1><p>The page may have moved. Find <a href="/research.html">research</a>, <a href="/publications.html">publications</a> or <a href="/writing.html">writing</a>, or <a href="/">return home</a>.</p></div>', '/404.html', extra='<meta name="robots" content="noindex">')
     routes = ['/', '/research.html', '/publications.html', '/writing.html'] + [w['route'] for w in writing]

@@ -7,6 +7,7 @@ The public site is static HTML. Python 3 (standard library only) generates the s
 - Biography and research: `_source/pages/`.
 - Bibliography and homepage paper selections: `_source/publications.json`. Keep original bylines and version-specific arXiv links. `preprint_year` is the first-posted year; `journal_ref` gives the separate journal citation. Record the primary metadata URL in `metadata_sources`.
 - Existing writing listings: `_source/writing.json`.
+- Published external op-eds: `_source/op-eds.json`. Verify titles, author order and dates against the linked publisher page. Use the external HTTPS article URL, a short original summary and, where useful, a `related_article` link to a longer exposition on this site. These entries link out; they do not republish the newspaper article or create a local note.
 - KI-fondet: `_source/articles/ai-fondet.html`. Preserve its URL, section IDs, coauthors, dates, references and embedded figures. Its structured metadata is in the adjacent JSON file. A layout edit does not change its substantive revision date.
 - Shared layout: `_source/site.html` and `css/site.css`.
 

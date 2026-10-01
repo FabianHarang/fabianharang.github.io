@@ -64,8 +64,12 @@ class SiteTests(unittest.TestCase):
     def test_publications_and_legacy_fragments(self):
         baseline = build.read_json(build.SOURCE / 'preservation.json')
         pubs = build.read_json(build.SOURCE / 'publications.json')
-        preserved = [{k: p[k] for k in ['title', 'authors', 'arxiv', 'preprint_year']} for p in pubs]
+        original_links = {p['arxiv'] for p in baseline['publications']}
+        preserved = [{k: p[k] for k in ['title', 'authors', 'arxiv', 'preprint_year']}
+                     for p in pubs if p['arxiv'] in original_links]
         self.assertEqual(preserved, baseline['publications'])
+        self.assertEqual(len(pubs), len({p['id'] for p in pubs}))
+        self.assertEqual(len(pubs), len({p['arxiv'] for p in pubs}))
         for anchor in baseline['homepage_ids']:
             self.assertIn(anchor, self.documents['index.html'].ids)
         for page in ['index.html', 'writing.html']:
@@ -86,6 +90,18 @@ class SiteTests(unittest.TestCase):
                 self.assertTrue(target in self.output or (build.ROOT / target).is_file(), f'{path}: {ref}')
                 if url.fragment and target in self.documents:
                     self.assertIn(unquote(url.fragment), self.documents[target].ids, f'{path}: {ref}')
+
+    def test_external_op_eds_and_related_essay(self):
+        op_eds = build.read_json(build.SOURCE / 'op-eds.json')
+        sitemap = self.output['sitemap.xml'].decode()
+        for item in op_eds:
+            self.assertIn(item['route'], self.documents['writing.html'].links)
+            self.assertNotIn(item['route'], sitemap)
+            related = item.get('related_article')
+            if related:
+                self.assertIn(related['route'], self.documents['writing.html'].links)
+                self.assertIn(item['route'], self.documents[related['route'].lstrip('/')].links)
+        self.assertNotIn('https://www.fabianharang.nohttps://', sitemap)
 
     def test_publication_gate(self):
         with tempfile.TemporaryDirectory() as folder:

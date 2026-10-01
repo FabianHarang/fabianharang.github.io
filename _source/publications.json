@@ -1,5 +1,21 @@
 [
   {
+    "id": "paper-28",
+    "title": "Dynamic Universal Approximation via Signature Controlled Differential Equations",
+    "authors": "Tomás Carrondo, Christa Cuchiero, Paul P. Hager, Fabian N. Harang",
+    "preprint_year": 2026,
+    "arxiv": "https://arxiv.org/abs/2607.13886v1",
+    "venue": "",
+    "doi": null,
+    "code": null,
+    "selected": true,
+    "publication_status": "preprint",
+    "metadata_sources": [
+      "https://arxiv.org/abs/2607.13886v1"
+    ],
+    "summary": "Well-posedness and dynamic universal approximation for signature controlled differential equations."
+  },
+  {
     "id": "paper-1",
     "title": "Computational aspects of the Volterra Signature",
     "authors": "Paul P. Hager, Fabian N. Harang, Luca Pelizzari, Samy Tindel",
@@ -12,7 +28,8 @@
     "metadata_sources": [
       "https://arxiv.org/abs/2605.18406v1"
     ],
-    "summary": "Computational methods for Volterra signatures and their implementation in tensordev."
+    "summary": "Computational methods for Volterra signatures and their implementation in tensordev.",
+    "publication_status": "preprint"
   },
   {
     "id": "paper-2",
@@ -23,10 +40,11 @@
     "venue": "",
     "doi": null,
     "code": null,
-    "selected": false,
+    "selected": true,
     "metadata_sources": [
       "https://arxiv.org/abs/2603.04525v2"
-    ]
+    ],
+    "publication_status": "preprint"
   },
   {
     "id": "paper-3",
@@ -135,7 +153,7 @@
     "venue": "",
     "doi": "10.1016/j.jedc.2023.104667",
     "code": null,
-    "selected": false,
+    "selected": true,
     "metadata_sources": [
       "https://arxiv.org/abs/2212.10053v1",
       "https://api.crossref.org/works/10.1016/j.jedc.2023.104667"
@@ -186,7 +204,7 @@
     "venue": "",
     "doi": "10.1007/s00440-022-01145-w",
     "code": null,
-    "selected": false,
+    "selected": true,
     "metadata_sources": [
       "https://arxiv.org/abs/2105.14063v1",
       "https://api.crossref.org/works/10.1007/s00440-022-01145-w"
@@ -203,7 +221,7 @@
     "venue": "Electronic Journal of Probability, 27, 1-38, 2022. DOI: 10.1214/22-EJP756",
     "doi": "10.1214/22-EJP756",
     "code": null,
-    "selected": false,
+    "selected": true,
     "journal_ref": "Electronic Journal of Probability, 27, 1–38 (2022).",
     "metadata_sources": [
       "https://arxiv.org/abs/2105.14056v1",
@@ -254,7 +272,7 @@
     "venue": "DOI: 10.1016/j.spa.2023.02.005",
     "doi": "10.1016/j.spa.2023.02.005",
     "code": null,
-    "selected": true,
+    "selected": false,
     "metadata_sources": [
       "https://arxiv.org/abs/2010.15517v2",
       "https://api.crossref.org/works/10.1016/j.spa.2023.02.005"
@@ -340,7 +358,7 @@
     "venue": "",
     "doi": "10.1142/S0219493721400104",
     "code": null,
-    "selected": false,
+    "selected": true,
     "metadata_sources": [
       "https://arxiv.org/abs/2003.05816v2",
       "https://api.crossref.org/works/10.1142/S0219493721400104"
