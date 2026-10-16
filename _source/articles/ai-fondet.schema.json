@@ -1,0 +1,27 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "KI-fondet",
+  "description": "En forsikring for europeisk suveren intelligens.",
+  "datePublished": "2026-06-17",
+  "dateModified": "2026-06-19",
+  "mainEntityOfPage": "https://www.fabianharang.no/ai/blog/ai-fondet.html",
+  "image": "https://www.fabianharang.no/assets/network-cover.png",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Andreas Ravndal Kostøl",
+      "url": "https://www.andreaskostol.no/"
+    },
+    {
+      "@type": "Person",
+      "name": "Fabian Nøst Harang",
+      "url": "https://www.fabianharang.no/"
+    }
+  ],
+  "publisher": {
+    "@type": "Person",
+    "name": "Fabian Nøst Harang",
+    "url": "https://www.fabianharang.no/"
+  }
+}
